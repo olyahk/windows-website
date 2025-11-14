@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Signature Shine LLC — Case Study · Olha Hinchak</title>
+  <meta name="description" content="Case study: service and UX design for Signature Shine LLC by Olha Hinchak." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0c10;--surface:#12141a;--card:#171a22;--text:#e8edf2;--muted:#9aa7b4;--line:rgba(255,255,255,.08);--accent:#7dd3fc;--accent2:#a78bfa;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px}
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    .container{width:min(900px,92vw);margin:0 auto}
+    header{border-bottom:1px solid var(--line);background:rgba(11,12,16,.6);backdrop-filter:blur(8px);position:sticky;top:0;z-index:40}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{font-weight:700;letter-spacing:.3px}
+    .btn{padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#0f1117;font-weight:600}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#0b0c10;border:none}
+    main{padding:28px 0 60px}
+    .hero{display:grid;grid-template-columns:100px 1fr;gap:16px;align-items:center;margin-top:6px}
+    .logo{width:100px;height:100px;border-radius:16px;overflow:hidden;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#202432,#0b0c10)}
+    h1{font-size:clamp(26px,5vw,40px);line-height:1.1;margin:0}
+    .subtitle{color:var(--muted);margin-top:6px}
+    section{margin-top:28px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    h2{font-size:20px;margin:0 0 10px}
+    p{line-height:1.7;color:var(--text)}
+    .muted{color:var(--muted)}
+    ul{margin:8px 0 0 20px;color:var(--muted);line-height:1.8}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media (max-width:800px){.hero{grid-template-columns:1fr}.logo{display:none}.grid{grid-template-columns:1fr}}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);text-align:center;margin-top:42px}
+    .kpis{display:flex;gap:10px;flex-wrap:wrap}
+    .kpi{padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#0f1117;color:#cfe7ff}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Olha Hinchak</div>
+      <nav>
+        <a class="btn" href="index.html">← Back to Portfolio</a>
+        <a class="btn primary" href="#outcomes">Jump to Outcomes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="logo">
+        <!-- Replace with your real logo file -->
+        <img src="assets/signature-shine-logo.png" alt="Signature Shine LLC logo" />
+      </div>
+      <div>
+        <h1>Signature Shine LLC — Case Study</h1>
+        <div class="subtitle">Service & UX design for a local cleaning brand in Cedar Falls, IA</div>
+        <div class="kpis" style="margin-top:10px">
+          <span class="kpi">Role: Founder • UX • Brand</span>
+          <span class="kpi">Timeline: 2025–Present</span>
+          <span class="kpi">Tools: Figma, Google Forms, Sheets</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="overview">
+      <h2>Overview</h2>
+      <p>Signature Shine LLC is a residential and commercial cleaning service I founded in Cedar Falls, Iowa. As a student and an employee, I wanted to experience entrepreneurship first‑hand and study it through a UX lens. I chose a hands‑on, high‑demand service where design thinking could make a clear difference. The goal was to create a service experience that felt personal, reliable, and gratifying. To bring it to life, I applied what I’ve learned so far — <strong>UX research</strong>, <strong>design thinking</strong>, and targeted <strong>marketing experiments</strong>.</p>
+    </section>
+
+    <section class="card" id="problem">
+      <h2>Problem</h2>
+      <p>Local competitors struggled with <strong>consistency of service</strong>, <strong>staff retention</strong>, and <strong>unclear communication</strong> (what’s included, when we arrive, how to prepare). This eroded trust. In interviews, many women in households felt they “should be able to do it themselves,” despite being overwhelmed by responsibilities — leading to guilt‑driven postponement rather than delegation.</p>
+    </section>
+
+    <section class="card" id="research">
+      <h2>Research</h2>
+      <ul>
+        <li>Interviewed <strong>10+ potential customers</strong> about needs, barriers, and definitions of “quality.”</li>
+        <li>Analyzed early bookings and messages to locate friction (unclear prep, reminders, arrival windows).</li>
+        <li>Reviewed competitor sites/ads to benchmark messaging, pricing clarity, and service menus.</li>
+        <li>Synthesized insights into themes: reliability & communication > price; clarity reduces anxiety.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="design">
+      <h2>Design & Strategy</h2>
+      <div class="grid">
+        <div>
+          <p><strong>Brand & Visuals.</strong> Built a friendly, trustworthy identity (soft blues, rounded type, simple icons). Designed leave‑behind cards and message templates to reinforce consistency.</p>
+          <p><strong>Service Journey.</strong> Mapped the end‑to‑end flow: inquiry → quote → booking → reminders → day‑of checklist → follow‑up. Removed ambiguity at each step.</p>
+        </div>
+        <div>
+          <p><strong>Communication System.</strong> Standardized confirmations, reminders, and post‑service follow‑ups. Added a prep checklist and arrival window to reduce uncertainty.</p>
+          <p><strong>A/B Marketing.</strong> Tested direct vs. lifestyle messaging. Lifestyle‑led creative achieved higher engagement; direct pricing copy converted faster for quotes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="implementation">
+      <h2>Implementation</h2>
+      <ul>
+        <li>Built simple CRM in Sheets with status tags (new, quoted, scheduled, completed, follow‑up).</li>
+        <li>Created feedback form (Google Forms) with NPS + open comments; logged outcomes to inform changes.</li>
+        <li>Documented SOPs for staff onboarding, quality checks, and rework handling.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="outcomes">
+      <h2>Outcomes</h2>
+      <ul>
+        <li><strong>15+ repeat clients</strong> in first months; built predictable weekly pipeline.</li>
+        <li>~<strong>40% fewer</strong> booking misunderstandings after updating templates and reminders.</li>
+        <li>Established a measurable feedback loop (NPS + comments) to guide service improvements.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="learned">
+      <h2>What I Learned</h2>
+      <p>UX isn’t limited to screens. Every message, arrival window, and follow‑up shapes the user experience. By applying research and simple systems, I improved trust and reliability — and saw direct business impact.</p>
+    </section>
+
+    <section class="card" id="gallery">
+      <h2>Artifacts</h2>
+      <ul>
+        <li>Brand moodboard & logo (Figma)</li>
+        <li>Service journey map</li>
+        <li>Message templates (confirmation, reminder, follow‑up)</li>
+        <li>Feedback form + sample responses</li>
+      </ul>
+      <div class="muted" style="margin-top:8px">(Add screenshots here — drop images into <code>assets/</code> and embed.)</div>
+    </section>
+
+    <section class="card" id="cta">
+      <h2>Next</h2>
+      <p>Translate the SOPs and messaging into a lightweight booking site with automated reminders. Pilot a referral program with trackable codes to quantify word‑of‑mouth.</p>
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn primary" href="https://www.figma.com/" target="_blank" rel="noreferrer">Open Figma</a>
+        <a class="btn" href="index.html">Back to Portfolio</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Olha Hinchak · Signature Shine LLC</div>
+  </footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
