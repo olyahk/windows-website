@@ -53,10 +53,10 @@
     .subtitle{color:var(--muted);margin-top:4px;max-width:620px}
     section{margin-top:26px}
 
-    /* gallery grid */
-    .gallery{
+    /* TOP GRID: two tiles (logos + card) */
+    .gallery-top{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
       gap:18px;
       margin-top:16px;
     }
@@ -74,7 +74,7 @@
       border-radius:14px;
       background:#0f1117;
       border:1px solid var(--line);
-      aspect-ratio:4/3;   /* keeps spacing even */
+      aspect-ratio:4/3;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -83,13 +83,13 @@
     .thumb img{
       max-width:100%;
       max-height:100%;
-      object-fit:contain; /* handles different image sizes nicely */
+      object-fit:contain;
     }
     /* stacked logos in first tile */
     .thumb.stack{
       flex-direction:column;
       gap:8px;
-      aspect-ratio:auto; /* let height grow for two images */
+      aspect-ratio:auto; /* allow height to grow for two images */
     }
     .label{
       font-size:14px;
@@ -99,6 +99,33 @@
       font-size:13px;
       color:var(--muted);
     }
+
+    /* BANNERS: full-width, one at a time */
+    .banner-list{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      margin-top:28px;
+    }
+    .banner-tile{
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      background:#0f1117;
+    }
+    .banner-thumb img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:cover; /* stretches nicely across the width */
+    }
+    .banner-meta{
+      padding:10px 14px;
+      font-size:13px;
+      color:var(--muted);
+    }
+
     footer{
       border-top:1px solid var(--line);
       padding:28px 0;
@@ -126,8 +153,9 @@
       </p>
     </section>
 
+    <!-- TOP: TWO TILES ACROSS THE PAGE -->
     <section>
-      <div class="gallery">
+      <div class="gallery-top">
         <!-- TILE 1: two stacked logo versions -->
         <article class="tile">
           <div class="thumb stack">
@@ -138,7 +166,7 @@
           <div class="meta">Two logo explorations for an Etsy shop concept.</div>
         </article>
 
-        <!-- TILE 2: congrats card, full tile on the right -->
+        <!-- TILE 2: congrats card -->
         <article class="tile">
           <div class="thumb">
             <img src="assets/Congratscard.png" alt="Payout congratulations card">
@@ -146,88 +174,34 @@
           <div class="label">Payout Congratulations</div>
           <div class="meta">Custom congratulations card for a client payout milestone.</div>
         </article>
+      </div>
+    </section>
 
-        <!-- BELOW: banners 1–10 -->
-        <article class="tile">
-          <div class="thumb">
+    <!-- BELOW: FULL-WIDTH BANNERS, ONE PER ROW -->
+    <section>
+      <div class="banner-list">
+        <article class="banner-tile">
+          <div class="banner-thumb">
             <img src="assets/shopbanner1.png" alt="Online store banner 1">
           </div>
-          <div class="label">Online Store Banner 1</div>
-          <div class="meta">Hero banner exploration for an online shop.</div>
+          <div class="banner-meta">Banner exploration — floral theme “Strike a Rose”.</div>
         </article>
 
-        <article class="tile">
-          <div class="thumb">
+        <article class="banner-tile">
+          <div class="banner-thumb">
             <img src="assets/shopbanner2.png" alt="Online store banner 2">
           </div>
-          <div class="label">Online Store Banner 2</div>
-          <div class="meta">Alternative layout and text treatment.</div>
+          <div class="banner-meta">Banner exploration — bold title “Peony”.</div>
         </article>
 
-        <article class="tile">
-          <div class="thumb">
+        <!-- Add more banners here if you want:
+        <article class="banner-tile">
+          <div class="banner-thumb">
             <img src="assets/shopbanner3.png" alt="Online store banner 3">
           </div>
-          <div class="label">Online Store Banner 3</div>
-          <div class="meta">Variation on typography and visual emphasis.</div>
+          <div class="banner-meta">Short description here.</div>
         </article>
-
-        <article class="tile">
-          <div class="thumb">
-            <img src="assets/shopbanner4.png" alt="Online store banner 4">
-          </div>
-          <div class="label">Online Store Banner 4</div>
-          <div class="meta">Focus on product highlight and clarity.</div>
-        </article>
-
-        <article class="tile">
-          <div class="thumb">
-            <img src="assets/shopbanner5.png" alt="Online store banner 5">
-          </div>
-          <div class="label">Online Store Banner 5</div>
-          <div class="meta">Exploration of color and hierarchy.</div>
-        </article>
-
-        <article class="tile">
-          <div class="thumb">
-            <img src="assets/shopbanner6.png" alt="Online store banner 6">
-          </div>
-          <div class="label">Online Store Banner 6</div>
-          <div class="meta">Wide-format banner for storefront.</div>
-        </article>
-
-        <article class="tile">
-          <div class="thumb">
-            <img src="assets/shopbanner7.png" alt="Online store banner 7">
-          </div>
-          <div class="label">Online Store Banner 7</div>
-          <div class="meta">Refining composition and spacing.</div>
-        </article>
-
-        <article class="tile">
-          <div class="thumb">
-            <img src="assets/shopbanner8.png" alt="Online store banner 8">
-          </div>
-          <div class="label">Online Store Banner 8</div>
-          <div class="meta">Testing different photography and layout.</div>
-        </article>
-
-        <article class="tile">
-          <div class="thumb">
-            <img src="assets/shopbanner9.png" alt="Online store banner 9">
-          </div>
-          <div class="label">Online Store Banner 9</div>
-          <div class="meta">Clean, minimal approach for the shop.</div>
-        </article>
-
-        <article class="tile">
-          <div class="thumb">
-            <img src="assets/shopbanner10.png" alt="Online store banner 10">
-          </div>
-          <div class="label">Online Store Banner 10</div>
-          <div class="meta">Final iteration for store branding visuals.</div>
-        </article>
-
+        -->
       </div>
     </section>
   </main>
