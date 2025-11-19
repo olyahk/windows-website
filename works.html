@@ -85,6 +85,12 @@
       max-height:100%;
       object-fit:contain; /* handles different image sizes nicely */
     }
+    /* stacked logos in first tile */
+    .thumb.stack{
+      flex-direction:column;
+      gap:8px;
+      aspect-ratio:auto; /* let height grow for two images */
+    }
     .label{
       font-size:14px;
       font-weight:500;
@@ -116,62 +122,110 @@
     <section class="hero">
       <h1>Logos & Visual Work</h1>
       <p class="subtitle">
-        A selection of logos, visuals from freelance, personal and class projects
+        A selection of logos and visuals from freelance, personal, and class projects.
       </p>
     </section>
 
     <section>
       <div class="gallery">
-        <! A LOGO 2-->
+        <!-- TILE 1: two stacked logo versions -->
         <article class="tile">
-          <div class="thumb">
-            <img src="assets/ShopLogo.png" alt="Potentian Dropshipping Store Logo">
+          <div class="thumb stack">
+            <img src="assets/ShopLogo.png" alt="Online store logo concept, version 1">
+            <img src="assets/ShopLogo2.png" alt="Online store logo concept, version 2">
           </div>
-          <div class="label">Online Store Logo</div>
-          <div class="meta">One of the vesions for logo on Etsy shop</div>
+          <div class="label">Potential logo for online store</div>
+          <div class="meta">Two logo explorations for an Etsy shop concept.</div>
         </article>
-        
-         <! A LOGO 2-->
+
+        <!-- TILE 2: congrats card, full tile on the right -->
         <article class="tile">
           <div class="thumb">
-            <img src="assets/ShopLogo2.png" alt="Potentian Dropshipping Store Logo">
-          </div>
-          <div class="label">Online Store Logo</div>
-          <div class="meta">One of the vesions for logo on Etsy shop</div>
-        </article>
-        
-        <!--CARD -->
-        <article class="tile">
-          <div class="thumb">
-            <img src="assets/Congratscard.png" alt="Congratulation card">
+            <img src="assets/Congratscard.png" alt="Payout congratulations card">
           </div>
           <div class="label">Payout Congratulations</div>
-          <div class="meta">Custom card for a client</div>
+          <div class="meta">Custom congratulations card for a client payout milestone.</div>
         </article>
 
-         <! BANNER1-->
+        <!-- BELOW: banners 1–10 -->
         <article class="tile">
           <div class="thumb">
-            <img src="assets/shopbanner1.png" alt="banner">
+            <img src="assets/shopbanner1.png" alt="Online store banner 1">
           </div>
-          <div class="label">Banner for Online Store</div>
-          <div class="meta">Custom banner for a client</div>
-        </article>
-
-        <article class="tile">
-          <div class="thumb">
-            <img src="assets/shopbanner10.png" alt="banner">
-          </div>
-          <div class="label">Banner for Online Store</div>
-          <div class="meta">Custom card for a client</div>
+          <div class="label">Online Store Banner 1</div>
+          <div class="meta">Hero banner exploration for an online shop.</div>
         </article>
 
         <article class="tile">
           <div class="thumb">
-            <img src="assets/Congratscard.png" alt="Congratulation card">
+            <img src="assets/shopbanner2.png" alt="Online store banner 2">
           </div>
-          <div class="label">Payout Congratulations</div>
-          <div class="meta">Custom card for a client</div>
+          <div class="label">Online Store Banner 2</div>
+          <div class="meta">Alternative layout and text treatment.</div>
+        </article>
+
+        <article class="tile">
+          <div class="thumb">
+            <img src="assets/shopbanner3.png" alt="Online store banner 3">
+          </div>
+          <div class="label">Online Store Banner 3</div>
+          <div class="meta">Variation on typography and visual emphasis.</div>
+        </article>
+
+        <article class="tile">
+          <div class="thumb">
+            <img src="assets/shopbanner4.png" alt="Online store banner 4">
+          </div>
+          <div class="label">Online Store Banner 4</div>
+          <div class="meta">Focus on product highlight and clarity.</div>
+        </article>
+
+        <article class="tile">
+          <div class="thumb">
+            <img src="assets/shopbanner5.png" alt="Online store banner 5">
+          </div>
+          <div class="label">Online Store Banner 5</div>
+          <div class="meta">Exploration of color and hierarchy.</div>
+        </article>
+
+        <article class="tile">
+          <div class="thumb">
+            <img src="assets/shopbanner6.png" alt="Online store banner 6">
+          </div>
+          <div class="label">Online Store Banner 6</div>
+          <div class="meta">Wide-format banner for storefront.</div>
+        </article>
+
+        <article class="tile">
+          <div class="thumb">
+            <img src="assets/shopbanner7.png" alt="Online store banner 7">
+          </div>
+          <div class="label">Online Store Banner 7</div>
+          <div class="meta">Refining composition and spacing.</div>
+        </article>
+
+        <article class="tile">
+          <div class="thumb">
+            <img src="assets/shopbanner8.png" alt="Online store banner 8">
+          </div>
+          <div class="label">Online Store Banner 8</div>
+          <div class="meta">Testing different photography and layout.</div>
+        </article>
+
+        <article class="tile">
+          <div class="thumb">
+            <img src="assets/shopbanner9.png" alt="Online store banner 9">
+          </div>
+          <div class="label">Online Store Banner 9</div>
+          <div class="meta">Clean, minimal approach for the shop.</div>
+        </article>
+
+        <article class="tile">
+          <div class="thumb">
+            <img src="assets/shopbanner10.png" alt="Online store banner 10">
+          </div>
+          <div class="label">Online Store Banner 10</div>
+          <div class="meta">Final iteration for store branding visuals.</div>
         </article>
 
       </div>
