@@ -38,7 +38,19 @@
     @media (max-width:900px){.grid{grid-template-columns:1fr 1fr}}
     @media (max-width:620px){.grid{grid-template-columns:1fr}}
     .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
-    .thumb{aspect-ratio:16/9;border-radius:12px;background:linear-gradient(135deg,#202432,#0b0c10);display:flex;align-items:center;justify-content:center;color:var(--muted);border:1px dashed var(--line);font-size:14px}
+    .thumb{
+      aspect-ratio:16/9;
+      border-radius:12px;
+      overflow:hidden;
+      background:#0f1117;
+      border:1px solid var(--line);
+      display:flex;
+    }
+    .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;  /* image fills the whole frame */
+    }
     .card h3{margin:12px 0 6px;font-size:18px}
     .card p{color:var(--muted);font-size:14px;margin:0 0 10px}
     .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
@@ -87,9 +99,9 @@
         <!-- 1) Signature Shine LLC case study with logo -->
         <article class="card" role="listitem">
           <div class="thumb">
-            <!-- Replace with your logo image -->
-            <img src="assets/Crd11.png" alt="Signature Shine LLC logo" style="width:120px; height:auto; opacity:.9" />
+              <img src="assets/Crd11.png" alt="Signature Shine LLC marketing slide" />
           </div>
+
           <h3>Case Study — Signature Shine LLC</h3>
           <p>Real‑world service: customer research, interviews, feedback, and starting business from scratch</p>
           <div class="meta">
@@ -105,8 +117,9 @@
         <!-- 2) QuizAssess in Figma -->
         <article class="card" role="listitem">
           <div class="thumb">
-            <img src="assets/QAFront.png" alt="Qizz Taker" style="width:120px; height:auto; opacity:.9" />
+              <img src="assets/QAFront.png" alt="QuizAssess welcome screen" />
           </div>
+
           <h3>Quiz Taker</h3>
           <p>Prototype of student quiz scheduling webpage: interface and usablity focus, color theory, quick actions</p>
           <div class="meta">
