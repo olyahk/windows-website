@@ -10,8 +10,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0b0c10;--surface:#12141a;--card:#171a22;--text:#e8edf2;--muted:#9aa7b4;--line:rgba(255,255,255,.08);
-      --accent:#7dd3fc;--accent2:#a78bfa;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px
+      --bg:#0b0c10;
+      --surface:#12141a;
+      --card:#171a22;
+      --text:#e8edf2;
+      --muted:#9aa7b4;
+      --line:rgba(255,255,255,.08);
+      --accent:#7dd3fc;
+      --accent2:#a78bfa;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
     }
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
@@ -21,53 +29,60 @@
     header{border-bottom:1px solid var(--line);background:rgba(11,12,16,.6);backdrop-filter:blur(8px);position:sticky;top:0;z-index:40}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
     .brand{font-weight:700;letter-spacing:.3px}
-    .btn{padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#0f1117;font-weight:600}
+    .btn{padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#0f1117;font-weight:600;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+    .btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.18)}
     .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#0b0c10;border:none}
     main{padding:28px 0 60px}
     .hero{
-    display:grid;
-    grid-template-columns:260px minmax(0, 1fr); /* big image left, wide text right */
-    gap:40px;
-    align-items:center;
-    margin-top:10px;
+      display:grid;
+      grid-template-columns:260px minmax(0,1fr);
+      gap:40px;
+      align-items:center;
+      margin-top:10px;
+      padding:18px 0 8px;
     }
-
-    /* On small screens, stack one on top of the other */
     @media (max-width:700px){
-    .hero{
-    grid-template-columns:1fr;
-    row-gap:16px;
+      .hero{
+        grid-template-columns:1fr;
+        row-gap:16px;
+      }
+      .avatar{
+        margin:0 auto;
+      }
     }
     .avatar{
-    margin:0 auto; /* center image on mobile */
+      width:220px;
+      height:220px;
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
     }
-    }
-
-    .avatar{
-    width:220px;
-    height:220px;
-    border-radius:16px;
-    overflow:hidden;
-    border:1px solid var(--line);
-    box-shadow:var(--shadow);
-    }
-
     .title h1{
-    font-size:clamp(32px,6vw,48px);
-    line-height:1.1;
-    margin:0;
+      font-size:clamp(32px,6vw,48px);
+      line-height:1.06;
+      margin:0;
     }
-
+    .intro{
+      max-width:62ch;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.65;
+      margin-top:14px;
+    }
     .subtitle{color:var(--muted);margin-top:6px}
     .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .pill{padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:14px}
+    .pill{padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:14px;transition:border-color .2s ease,color .2s ease}
+    .pill:hover{border-color:rgba(255,255,255,.18);color:var(--text)}
     .actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
     section{margin-top:34px}
-    .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    @media (max-width:900px){.grid{grid-template-columns:1fr 1fr}}
-    @media (max-width:620px){.grid{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+    .section-title{display:flex;align-items:end;justify-content:space-between;margin-bottom:12px;gap:16px}
+    .section-title h2{margin:0}
+    .section-title p{margin:0;color:var(--muted);font-size:14px}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+    .project-card{display:flex;flex-direction:column;height:100%}
     .thumb{
       aspect-ratio:16/9;
       border-radius:12px;
@@ -79,12 +94,15 @@
     .thumb img{
       width:100%;
       height:100%;
-      object-fit:cover;  /* image fills the whole frame */
+      object-fit:cover;
+      transition:transform .35s ease;
     }
+    .project-card:hover .thumb img{transform:scale(1.03)}
     .card h3{margin:12px 0 6px;font-size:18px}
-    .card p{color:var(--muted);font-size:14px;margin:0 0 10px}
+    .card p{color:var(--muted);font-size:14px;line-height:1.6;margin:0 0 10px}
     .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
     .chip{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(125,211,252,.12);border:1px solid rgba(125,211,252,.25);color:#bae6fd}
+    .project-card .actions{margin-top:auto;padding-top:14px}
     footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);text-align:center;margin-top:42px}
   </style>
 </head>
@@ -93,23 +111,23 @@
     <div class="container nav">
       <div class="brand">Olha Hinchak</div>
       <nav>
+        <a class="btn" href="#projects">Projects</a>
         <a class="btn" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <!-- HERO: name + image + links + resume -->
     <section class="hero" id="top">
       <div class="avatar">
-        <!My headshot-->
-        <img src="assets/myheadshot.jpeg" alt="Snapshot" />
+        <img src="assets/myheadshot.jpeg" alt="Olha Hinchak headshot" />
       </div>
       <div class="title">
         <h1>Hi, I'm Olya!</h1>
         <div class="subtitle">UI Designer</div>
-        <div class="subtitle">Major: CS and Psychology</div>
+        <div class="subtitle">Computer Science + Psychology</div>
         <div class="subtitle">University of Northern Iowa</div>
+        <p class="intro">I design digital experiences that feel clear, useful, and visually polished. My work blends interface design, user-centered thinking, and psychology to create products that are both functional and intuitive.</p>
         <div class="links">
           <a class="pill" href="https://www.linkedin.com/in/olha-hinchak-81b8342b3/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a class="pill" href="https://github.com/olyahk" target="_blank" rel="noreferrer">GitHub</a>
@@ -120,72 +138,76 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
     <section id="projects">
       <div class="section-title">
         <h2>Projects</h2>
+        <p>Selected work across UI, UX research, and branding.</p>
       </div>
       <div class="grid" role="list">
-        <!-- 1) Signature Shine LLC case study with logo -->
-        <article class="card" role="listitem">
+        <article class="card project-card" role="listitem">
           <div class="thumb">
-              <img src="assets/Crd11.png" alt="Signature Shine LLC marketing slide" />
+            <img src="assets/Crd11.png" alt="Signature Shine LLC marketing slide" />
           </div>
-
           <h3>Case Study — Signature Shine LLC</h3>
-          <p>Real‑world service: customer research, interviews, feedback, and starting business from scratch</p>
+          <p>Real-world service design project focused on customer research, interviews, feedback analysis, and building a business concept from the ground up.</p>
           <div class="meta">
             <span class="chip">UX Research</span>
             <span class="chip">Brand</span>
           </div>
-          <div class="actions" style="margin-top:10px">
-            <!-- Link to a dedicated case page (optional) or Figma/PDF -->
+          <div class="actions">
             <a class="btn" href="case-signature-shine.html">Open case</a>
           </div>
         </article>
 
-        <!-- 2) QuizAssess in Figma -->
-        <article class="card" role="listitem">
+        <article class="card project-card" role="listitem">
           <div class="thumb">
-              <img src="assets/QAFront.png" alt="QuizAssess welcome screen" />
+            <img src="assets/company-dashboard-cover.png" alt="Professional training dashboard prototype" />
           </div>
+          <h3>Professional Training Dashboard</h3>
+          <p>Company dashboard concept created for a class project, designed to organize employee learning, track progress, and present training performance through a clean and structured interface.</p>
+          <div class="meta">
+            <span class="chip">Product Design</span>
+            <span class="chip">Dashboard UI</span>
+            <span class="chip">Figma</span>
+          </div>
+          <div class="actions">
+            <a class="btn" href="https://www.figma.com/make/oG4qMU7jyUw5wTpNj0EKIo/Professional-Training-Dashboard?fullscreen=1&t=9wqOMvxA65aUpOL0-1" target="_blank" rel="noreferrer">View Prototype</a>
+          </div>
+        </article>
 
+        <article class="card project-card" role="listitem">
+          <div class="thumb">
+            <img src="assets/QAFront.png" alt="QuizAssess welcome screen" />
+          </div>
           <h3>Quiz Taker</h3>
-          <p>Prototype of student quiz scheduling webpage: interface and usablity focus, color theory, quick actions</p>
+          <p>Prototype of a student quiz scheduling webpage with attention to usability, color hierarchy, and fast actions that simplify the testing flow.</p>
           <div class="meta">
             <span class="chip">UI</span>
             <span class="chip">Figma</span>
             <span class="chip">Prototype</span>
           </div>
-          <div class="actions" style="margin-top:10px">
+          <div class="actions">
             <a class="btn" href="https://www.figma.com/design/o5eSUojrjNCxDl0hwJI9G5/QuizAsses-System?node-id=45-62&t=Kel7CRRicOMVmXIc-1" target="_blank" rel="noreferrer">View Prototype</a>
           </div>
         </article>
 
-        <!-- 3) Logo work gallery -->
-        <article class="card" role="listitem">
+        <article class="card project-card" role="listitem">
           <div class="thumb">
-              <img src="assets/ShopLogo.png" alt="Logo gallery" />
+            <img src="assets/ShopLogo.png" alt="Logo gallery" />
           </div>
-          
           <h3>Logos & Visuals</h3>
-          <p>Selected logos and other visuals from freelance and personal brand explorations</p>
+          <p>Selected logos and visual work from freelance projects and personal brand explorations.</p>
           <div class="meta">
             <span class="chip">Brand</span>
             <span class="chip">Freelance</span>
           </div>
-          <div class="actions" style="margin-top:10px">
-            <!-- Link to a simple gallery page -->
+          <div class="actions">
             <a class="btn" href="works.html">Open gallery</a>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- Legacy Works-->
-
-
-    <!-- CONTACT / FOOTER -->
     <section id="contact" style="margin-top:34px">
       <div class="card">
         <h2>Contact</h2>
