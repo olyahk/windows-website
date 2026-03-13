@@ -9,40 +9,164 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#0b0c10;--surface:#12141a;--card:#171a22;--text:#e8edf2;--muted:#9aa7b4;--line:rgba(255,255,255,.08);--accent:#7dd3fc;--accent2:#a78bfa;--shadow:0 10px 30px rgba(0,0,0,.35);--radius:18px}
+    :root{
+      --bg:#f6f3ee;
+      --surface:rgba(255,255,255,.55);
+      --card:rgba(255,255,255,.65);
+      --text:#1c1c1c;
+      --muted:#6f6f6f;
+      --line:rgba(0,0,0,.08);
+      --accent:#8ecae6;
+      --accent2:#cdb4db;
+      --shadow:0 10px 35px rgba(0,0,0,.08);
+      --radius:18px;
+      --blur:14px;
+    }
+
     *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+
+    html,body{
+      margin:0;
+      background:linear-gradient(180deg,#faf7f2,#f3efe9);
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    }
+
     a{color:inherit;text-decoration:none}
     img{display:block;max-width:100%}
+
     .container{width:min(900px,92vw);margin:0 auto}
-    header{border-bottom:1px solid var(--line);background:rgba(11,12,16,.6);backdrop-filter:blur(8px);position:sticky;top:0;z-index:40}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+
+    header{
+      border-bottom:1px solid var(--line);
+      background:rgba(255,255,255,.55);
+      backdrop-filter:blur(var(--blur));
+      -webkit-backdrop-filter:blur(var(--blur));
+      position:sticky;
+      top:0;
+      z-index:40;
+    }
+
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:12px}
     .brand{font-weight:700;letter-spacing:.3px}
-    .btn{padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#0f1117;font-weight:600}
-    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#0b0c10;border:none}
+
+    .btn{
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.6);
+      backdrop-filter:blur(var(--blur));
+      font-weight:600;
+      transition:all .2s ease;
+    }
+
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.75)}
+
+    .btn.primary{
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#1c1c1c;
+      border:none;
+    }
+
     main{padding:28px 0 60px}
-    .hero{display:grid;grid-template-columns:100px 1fr;gap:16px;align-items:center;margin-top:6px}
-    .logo{width:100px;height:100px;border-radius:16px;overflow:hidden;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#202432,#0b0c10)}
-    h1{font-size:clamp(26px,5vw,40px);line-height:1.1;margin:0}
-    .subtitle{color:var(--muted);margin-top:6px}
+
+    .hero{
+      display:grid;
+      grid-template-columns:110px 1fr;
+      gap:18px;
+      align-items:center;
+      margin-top:6px;
+    }
+
+    .logo{
+      width:110px;
+      height:110px;
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.6);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,.55);
+      backdrop-filter:blur(var(--blur));
+      -webkit-backdrop-filter:blur(var(--blur));
+      box-shadow:var(--shadow);
+    }
+
+    h1{
+      font-size:clamp(26px,5vw,40px);
+      line-height:1.1;
+      margin:0;
+    }
+
+    .subtitle{color:var(--muted);margin-top:6px;line-height:1.6}
+
     section{margin-top:28px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+
+    .card{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.6);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(var(--blur));
+      -webkit-backdrop-filter:blur(var(--blur));
+      transition:transform .25s ease,box-shadow .25s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 15px 45px rgba(0,0,0,.12);
+    }
+
     h2{font-size:20px;margin:0 0 10px}
-    p{line-height:1.7;color:var(--text)}
+    p{line-height:1.7;color:var(--text);margin:0}
     .muted{color:var(--muted)}
     ul{margin:8px 0 0 20px;color:var(--muted);line-height:1.8}
+
     .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    @media (max-width:800px){.hero{grid-template-columns:1fr}.logo{display:none}.grid{grid-template-columns:1fr}}
-    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);text-align:center;margin-top:42px}
+
     .kpis{display:flex;gap:10px;flex-wrap:wrap}
-    .kpi{padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:#0f1117;color:#cfe7ff}
+
+    .kpi{
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:rgba(255,255,255,.55);
+      color:#555;
+      backdrop-filter:blur(var(--blur));
+    }
+
+    code{
+      background:rgba(255,255,255,.7);
+      border:1px solid var(--line);
+      padding:2px 6px;
+      border-radius:8px;
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+      font-size:.9em;
+    }
+
+    footer{
+      border-top:1px solid var(--line);
+      padding:28px 0;
+      color:var(--muted);
+      text-align:center;
+      margin-top:42px;
+    }
+
+    @media (max-width:800px){
+      .hero{grid-template-columns:1fr}
+      .logo{display:none}
+      .grid{grid-template-columns:1fr}
+      .nav{flex-wrap:wrap}
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container nav">
       <div class="brand">Olha Hinchak</div>
-      <nav>
+      <nav style="display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn" href="index.html">← Back to Portfolio</a>
         <a class="btn primary" href="#outcomes">Jump to Outcomes</a>
       </nav>
@@ -52,12 +176,11 @@
   <main class="container">
     <section class="hero">
       <div class="logo">
-        <!-- Replace with your real logo file -->
         <img src="assets/Crd11.png" alt="Signature Shine LLC logo" />
       </div>
       <div>
         <h1>Signature Shine LLC — Case Study</h1>
-        <div class="subtitle">Service & UX design for a local cleaning brand in Cedar Falls, IA</div>
+        <div class="subtitle">Service & UX design for a local cleaning brand in Cedar Falls, Iowa</div>
         <div class="kpis" style="margin-top:10px">
           <span class="kpi">Role: Founder • UX • Brand</span>
           <span class="kpi">Timeline: 2025–Present</span>
@@ -68,21 +191,21 @@
 
     <section class="card" id="overview">
       <h2>Overview</h2>
-      <p>Signature Shine LLC is a residential and commercial cleaning service I founded in Cedar Falls, Iowa. As a student and an employee, I wanted to experience entrepreneurship first‑hand. I studied UX approach to learn what makes a brand/business/interface succeed. I though of something that was realistic, hands-on, and could have had a high demand. The goal was to create a service experience that felt personal, reliable, and gratifying. To bring it to life, I applied what I’ve learned so far — <strong>UX research</strong>, <strong>design thinking</strong>, and targeted <strong>marketing experiments</strong>.</p>
+      <p>Signature Shine LLC is a residential and commercial cleaning service I founded in Cedar Falls, Iowa. As a student and an employee, I wanted to experience entrepreneurship firsthand while applying UX thinking to a real service. I chose something practical, high-touch, and realistic to test. The goal was to create an experience that felt personal, reliable, and genuinely relieving for customers. To build it, I used UX research, design thinking, and small marketing experiments.</p>
     </section>
 
     <section class="card" id="problem">
       <h2>Problem</h2>
-      <p>Local competitors struggled with <strong>consistency of service</strong>, <strong>staff retention</strong>, and <strong>unclear communication</strong> (what’s included, when they arrive, how to prepare). It was not the problem that different people were coming to clean, it was the the service they provided was not consistent. This distroyed trust. In interviews, many women in households felt they “should be able to do it themselves,” despite being overwhelmed by responsibilities, which was leading to guilt.</p>
+      <p>Local competitors struggled with consistency, staff retention, and unclear communication around what was included, when cleaners would arrive, and how clients should prepare. The issue was not that different people showed up. The issue was inconsistent quality. That weakened trust. In interviews, many women also expressed feeling like they should be able to manage the cleaning themselves, even when they were already overwhelmed, which added guilt to the experience.</p>
     </section>
 
     <section class="card" id="research">
       <h2>Research</h2>
       <ul>
-        <li>Interviewed <strong>10+ potential customers</strong> about needs, barriers, and definitions of “quality.”</li>
-        <li>Created a personal clear checklist and early bookings messaging system to set expectations.</li>
-        <li>Reviewed competitor sites/ads to benchmark messaging, pricing clarity, and service menus.</li>
-        <li>Gathered feedback right after the service and one week post-survey.</li>
+        <li>Interviewed <strong>10+ potential customers</strong> about needs, barriers, and how they defined a high-quality service.</li>
+        <li>Created a clearer checklist and early booking messages to set expectations before service.</li>
+        <li>Reviewed competitor sites and ads to compare messaging, pricing clarity, and service menus.</li>
+        <li>Collected feedback immediately after service and again one week later.</li>
       </ul>
     </section>
 
@@ -90,12 +213,12 @@
       <h2>Design & Strategy</h2>
       <div class="grid">
         <div>
-          <p><strong>Brand & Visuals.</strong> Built a friendly, trustworthy identity (blues, rounded type, simple icons). Designed leave‑behind cards and message templates to reinforce consistency.</p>
-          <p><strong>Service Journey.</strong> Mapped the end‑to‑end flow: inquiry → quote → day‑of checklist → booking → reminders → follow‑up. Removed ambiguity at each step.</p>
+          <p><strong>Brand & Visuals.</strong> Built a friendly, trustworthy identity with soft blues, rounded typography, and simple visual elements. Designed leave-behind cards and message templates to make the experience feel consistent.</p>
+          <p style="margin-top:12px"><strong>Service Journey.</strong> Mapped the full customer flow from inquiry to quote, checklist, booking, reminders, and follow-up. The goal was to remove uncertainty at every step.</p>
         </div>
         <div>
-          <p><strong>Communication System.</strong> Standardized confirmations, reminders, and post‑service follow‑ups. Added a prep checklist and arrival window to reduce uncertainty.</p>
-          <p><strong>A/B Marketing.</strong> Tested direct vs. general messaging. Direct outreach, with introduction and getting to know the customer achieved way higher engagement than flyers; direct pricing copy converted faster for quotes.</p>
+          <p><strong>Communication System.</strong> Standardized confirmations, reminders, and post-service follow-ups. Added a prep checklist and arrival window to reduce confusion.</p>
+          <p style="margin-top:12px"><strong>A/B Marketing.</strong> Tested direct outreach versus general flyers. Direct, personal outreach performed much better, and pricing language that was more explicit helped people move faster toward requesting quotes.</p>
         </div>
       </div>
     </section>
@@ -103,40 +226,40 @@
     <section class="card" id="implementation">
       <h2>Implementation</h2>
       <ul>
-        <li>Built simple CRM in Sheets with status tags (new, quoted, scheduled, completed, follow‑up).</li>
-        <li>Created feedback form (Google Forms) with NPS + open comments; logged outcomes to inform changes.</li>
-        <li>Documented SOPs for staff onboarding, quality checks, and rework handling.</li>
+        <li>Built a simple CRM in Sheets with tags for new, quoted, scheduled, completed, and follow-up.</li>
+        <li>Created a feedback form in Google Forms with NPS and open comments to guide service improvements.</li>
+        <li>Documented SOPs for onboarding, quality checks, and handling rework.</li>
       </ul>
     </section>
 
     <section class="card" id="outcomes">
       <h2>Outcomes</h2>
       <ul>
-        <li><strong>7+ repeat clients</strong> in first 3 months; built predictable weekly pipeline.</li>
-        <li>~<strong>40% higher quality</strong> service after updating personal checklist and gathering feedback.</li>
-        <li>Established a measurable feedback loop (NPS + comments) to guide service improvements.</li>
+        <li><strong>7+ repeat clients</strong> in the first 3 months, creating a more predictable weekly pipeline.</li>
+        <li>Approximately <strong>40% higher quality</strong> service after revising the checklist and adding a stronger feedback loop.</li>
+        <li>Established a measurable system using NPS and comments to guide future improvements.</li>
       </ul>
     </section>
 
     <section class="card" id="learned">
       <h2>What I Learned</h2>
-      <p>UX isn’t limited to screens. Every message, arrival window, and follow‑up shapes the user experience. By applying research and simple systems, I improved trust and reliability — and saw direct business impact.</p>
+      <p>UX is not limited to digital interfaces. Every message, arrival window, checklist, and follow-up shapes the user experience. By applying research and simple systems, I improved trust, reduced friction, and saw clear business impact.</p>
     </section>
 
     <section class="card" id="gallery">
       <h2>Artifacts</h2>
       <ul>
-        <li>Brand moodboard & logo (Figma)</li>
+        <li>Brand moodboard and logo in Figma</li>
         <li>Service journey map</li>
-        <li>Message templates (confirmation, reminder, follow‑up)</li>
-        <li>Feedback form + sample responses</li>
+        <li>Message templates for confirmation, reminder, and follow-up</li>
+        <li>Feedback form and sample responses</li>
       </ul>
-      <div class="muted" style="margin-top:8px">(screenshots here <code>assets/</code>)</div>
+      <div class="muted" style="margin-top:10px">Add screenshots from <code>assets/</code> here when you're ready.</div>
     </section>
 
     <section class="card" id="cta">
       <h2>Next</h2>
-      <p>Translate the SOPs and messaging into a lightweight booking site with automated reminders. Pilot a referral program with trackable codes to quantify word‑of‑mouth.</p>
+      <p>Translate the SOPs and messaging into a lightweight booking website with automated reminders, then pilot a referral program with trackable codes to measure word-of-mouth growth.</p>
       <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn primary" href="https://www.figma.com/" target="_blank" rel="noreferrer">Open Figma</a>
         <a class="btn" href="index.html">Back to Portfolio</a>
