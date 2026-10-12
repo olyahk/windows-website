@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Olha Hinchak — Portfolio</title>
-  <meta name="description" content="UI/UX projects, case studies, and brand work by Olha Hinchak." />
+  <meta name="description" content="Software engineering, web development, and professional experience by Olha Hinchak." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -226,6 +226,26 @@
 
     .project-card .actions{margin-top:auto;padding-top:14px}
 
+    html{scroll-behavior:smooth;scroll-padding-top:100px}
+    .nav nav{display:flex;gap:8px;flex-wrap:wrap}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:18px}
+    .stat strong{display:block;font-size:30px;margin-bottom:8px}
+    .stat span{color:var(--muted);font-size:14px;line-height:1.6}
+    .card ul{padding-left:20px;color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:0}
+    .card li+li{margin-top:8px}
+    .card .employer{font-weight:600;color:var(--text)}
+    .story p{max-width:85ch}
+    .skills{margin-top:18px}
+    .skills .meta{margin-bottom:20px}
+    @media(max-width:700px){
+      .nav{align-items:flex-start;gap:14px;flex-direction:column}
+      .nav .btn{font-size:13px;padding:8px 10px}
+      .stats{grid-template-columns:1fr}
+      .section-title{align-items:flex-start;flex-direction:column;gap:8px}
+      html{scroll-padding-top:140px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
     footer{
       border-top:1px solid var(--line);
       padding:28px 0;
@@ -239,7 +259,9 @@
   <header>
     <div class="container nav">
       <div class="brand">Olha Hinchak</div>
-      <nav>
+      <nav aria-label="Main navigation">
+        <a class="btn" href="#about">About</a>
+        <a class="btn" href="#experience">Experience</a>
         <a class="btn" href="#projects">Projects</a>
         <a class="btn" href="#contact">Contact</a>
       </nav>
@@ -253,10 +275,10 @@
       </div>
       <div class="title">
         <h1>Hi, I'm Olya!</h1>
-        <div class="subtitle">UI Designer</div>
+        <div class="subtitle">Software Engineer &amp; Web Developer</div>
         <div class="subtitle">Computer Science + Psychology</div>
         <div class="subtitle">University of Northern Iowa</div>
-        <p class="intro">I design digital experiences that feel clear, useful, and visually polished. My work blends interface design, user-centered thinking, and psychology to create products that are both functional and intuitive.</p>
+        <p class="intro">I’m a software engineer and web developer with a background in computer science and psychology. At John Deere, I build technology solutions that help people find, understand, and work with data. I bring that same focus to the web: clear interfaces, practical functionality, and software built around the people who use it.</p>
         <div class="links">
           <a class="pill" href="https://www.linkedin.com/in/olha-hinchak-81b8342b3/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a class="pill" href="https://github.com/olyahk" target="_blank" rel="noreferrer">GitHub</a>
@@ -267,10 +289,80 @@
       </div>
     </section>
 
+    <section id="about" aria-labelledby="about-title">
+      <div class="section-title"><h2 id="about-title">About me</h2></div>
+      <div class="card story">
+        <h3>From Ukraine to Iowa</h3>
+        <p>I’m originally from Ukraine and came to the United States. Today, I’m based in Iowa, studying computer science and psychology at the University of Northern Iowa and working as a software engineer at John Deere.</p>
+        <p>My studies connect two sides of my work: how software works and how people use it. Alongside engineering, my experience includes data analysis, community development projects, and starting and managing my own business.</p>
+        <p>I’m bringing those experiences together as I build my career in software engineering and web development.</p>
+      </div>
+    </section>
+
+    <section id="experience" aria-labelledby="experience-title">
+      <div class="section-title">
+        <h2 id="experience-title">Professional dashboard</h2>
+        <p>My experience, skills, and work so far.</p>
+      </div>
+      <div class="stats">
+        <div class="card stat"><strong>15+</strong><span>Tableau &amp; Power BI dashboards created and maintained</span></div>
+        <div class="card stat"><strong>35+</strong><span>Recurring data audits managed</span></div>
+        <div class="card stat"><strong>Dec 2026</strong><span>Expected graduation · Computer Science &amp; Psychology</span></div>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="chip">Feb 2025 – Present</div>
+          <h3>Software Engineer / Data Analyst</h3>
+          <p class="employer">John Deere Tractor Operations · Waterloo, IA</p>
+          <p>Data Analyst: Feb 2025 – Apr 2026<br>Software Engineer: Apr 2026 – Present</p>
+          <ul>
+            <li>Built an AI-powered digital assistant connected to Genie Workspace to help users find and work with data.</li>
+            <li>Partner with manufacturing employees, product managers, and other teams to define requirements and develop technology solutions.</li>
+            <li>Create and maintain operational dashboards and coordinate resolution of data, production, and software issues.</li>
+            <li>Presented the product at a company expo for employees and leaders from multiple factories.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="chip">Aug 2026 – Present</div>
+          <h3>Teaching Assistant</h3>
+          <p class="employer">University of Northern Iowa · Work Performance</p>
+          <p>Support course instruction and student learning, with an emphasis on workplace behavior and employee performance.</p>
+        </article>
+        <article class="card">
+          <div class="chip">Sep 2025 – Apr 2026</div>
+          <h3>Operations Manager</h3>
+          <p class="employer">Signature Shine LLC Cleaning · Cedar Falls, IA</p>
+          <ul>
+            <li>Started and managed a residential and commercial cleaning business.</li>
+            <li>Hired and trained four employees and managed scheduling, client communication, and daily operations.</li>
+            <li>Improved scheduling and services using feedback from clients and employees.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="chip">Jan 2024 – Jan 2025</div>
+          <h3>Project Assistant</h3>
+          <p class="employer">Institute for Decision Making · Cedar Falls, IA</p>
+          <ul>
+            <li>Analyzed community and economic data for development projects across Iowa.</li>
+            <li>Created reports and presentations for community leaders and supported strategic planning sessions.</li>
+            <li>Assisted with planning and marketing an Iowa Rural Summit event.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="card skills">
+        <h3>Technical toolkit</h3>
+        <div class="meta">
+          <span class="chip">Python</span><span class="chip">C#</span><span class="chip">SQL</span><span class="chip">SAP HANA</span><span class="chip">Elasticsearch</span><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">Visual Studio</span><span class="chip">Copilot</span><span class="chip">OpenAI</span>
+        </div>
+        <h3>Leadership &amp; community</h3>
+        <p>In June 2026, I introduced middle school students to AI through hands-on activities with John Deere and Waterloo Schools. From September 2023 to May 2026, I served as a Women in Computing NISG Ambassador at UNI, supporting student outreach and events.</p>
+      </div>
+    </section>
+
     <section id="projects">
       <div class="section-title">
         <h2>Projects</h2>
-        <p>Selected work across UI, UX research, and branding.</p>
+        <p>Interface prototypes, user research, and visual design.</p>
       </div>
       <div class="grid" role="list">
         <article class="card project-card" role="listitem">
@@ -340,7 +432,7 @@
     <section id="contact" style="margin-top:34px">
       <div class="card">
         <h2>Contact</h2>
-        <p class="subtitle">Open to internships and collaborations.</p>
+        <p class="subtitle">Open to software engineering and web development opportunities, internships, and collaborations.</p>
         <div class="links">
           <a class="pill" href="mailto:olhahinchak@gmail.com">Email</a>
           <a class="pill" href="https://www.linkedin.com/in/olha-hinchak-81b8342b3/" target="_blank" rel="noreferrer">LinkedIn</a>
